@@ -44,7 +44,8 @@
         }
 
         section h2{
-            color: #ef3b2d
+            color: #ef3b2d;
+            font-size: 3.5rem
         }
 
 
@@ -76,9 +77,12 @@
                 </div>
              </nav>
     </header>
-    <div class="container">
-        @foreach ($sections as $section)
+    <div class="container-fluid">
+        <img src="{{$jumbotronImg}}" alt="">
+    </div>
+    <div class="container mt-4">
 
+        @foreach ($sections as $section)
         <section>
             {{-- @php
                var_dump($section)
