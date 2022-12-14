@@ -31,6 +31,16 @@
             height: 100%;
             align-self: center;
         }
+
+        .card-body >img{
+            width: 10vmin;
+            height: 10vmin;
+            margin-right: 1em
+        }
+
+        .card{
+            min-height: 150px
+        }
         </style>
 </head>
 <body>
@@ -58,6 +68,25 @@
                 </div>
              </nav>
     </header>
+    <div class="container">
+
+           <div class="row row-cols-2 g-2 mt-5">
+            @foreach ($resources as $resource)
+            <div class="col">
+                <div class="card">
+                    <div class="card-body d-flex">
+                        <img src="{{$resource["img"]}}" class="card-img-top" alt="...">
+                        <div>
+                            <h5 class="card-title">{{$resource["name"]}}</h5>
+                            <p class="card-text">{{$resource["txt"]}}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+                @endforeach
+        </div>
+    </div>
     
 </body>
 </html>

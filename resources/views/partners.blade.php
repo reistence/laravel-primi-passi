@@ -31,6 +31,15 @@
             height: 100%;
             align-self: center;
         }
+
+         .jumbo{
+            width: 50%;
+            margin: 2em 0;
+        }
+
+        .jumbo h2{
+            color: #ef3b2d;
+        }
         </style>
 </head>
 <body>
@@ -58,6 +67,27 @@
                 </div>
              </nav>
     </header>
+    <div class="container">
+        <div class="jumbo">
+            <h2>{{$partnersTitle}}</h2>
+            <p>{{$partnersText}}</p>
+        </div>
+         <div class="row row-cols-3 g-2">
+            @foreach ($partners as $partner)
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$partner["name"]}}</h5>
+                        <p class="card-text">{{$partner["country"]}}</p>
+                        <p class="card-text">{{$partner["txt"]}}</p>
+                        
+                        <img src="{{$partner["img"]}}" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+                @endforeach
+        </div>
+    </div>
     
 </body>
 </html>
